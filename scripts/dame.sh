@@ -6,7 +6,7 @@
 _dame_completion() {
   COMPREPLY=()
   local cur="${COMP_WORDS[COMP_CWORD]}"
-  local files=$(compgen -f -- "$cur")
+  local files=$(compgen -f -- "$cur" | grep -v "^dame.sh$")
   COMPREPLY=( $(printf "%s\n" "${files[@]}" ) )
 }
 
@@ -20,4 +20,4 @@ if [ -z "$1" ]; then
 fi
 
 # Perform the action based on the sub command
-echo "$1"
+sh "$1"

@@ -4,10 +4,9 @@
 
 # Define the completion function
 _dame_completion() {
-  COMPREPLY=()
   local cur="${COMP_WORDS[COMP_CWORD]}"
-  local files=$(compgen -f -- "$cur" | grep -v "^dame.sh$")
-  COMPREPLY=( $(printf "%s\n" "${files[@]}" ) )
+  local files="$(find "$HOME/bin/dame" -type f -name "$cur*" -printf "%f\n" 2> /dev/null)"
+  COMPREPLY=( $(compgen -W "$files" -- "$cur") )
 }
 
 # Register the completion function
@@ -20,4 +19,4 @@ if [ -z "$1" ]; then
 fi
 
 # Perform the action based on the sub command
-sh "$1"
+sh "$HOME/bin/dame/$1"

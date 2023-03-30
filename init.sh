@@ -4,7 +4,7 @@
 sh install.sh
 
 # Initialize
-custom_alias="\n# dame-cli\nalias dame='$home_dir/bin/dame/dame.sh'\n"
+custom_alias="\n\n# dame-cli\nalias dame='$HOME/bin/dame/dame.sh'\n\n"
 
 if [ -f ~/.bashrc ]; then
   echo "Adding alias to ~/.bashrc"

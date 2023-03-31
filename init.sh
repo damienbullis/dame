@@ -3,8 +3,8 @@
 # Install Scripts
 sh install.sh
 
-# Initialize
-custom_alias="\n\n# dame-cli\nalias dame='$HOME/bin/dame/dame.sh'\n\n"
+# Initialize Scripts to extend PATH
+custom_alias="\n\n# dame-cli\nexport PATH="$HOME/bin/dame:$PATH"\n\n"
 
 if [ -f ~/.bashrc ]; then
   echo "Adding alias to ~/.bashrc"

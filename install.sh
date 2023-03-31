@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Get all bash files in cwd (excluding install.sh and init.sh)
-files=scripts/*.sh
-
+# Get all bash files in scripts directory
+files=scripts/*
 
 echo "Installing scripts to $HOME/bin/dame:"
 echo $files
@@ -10,4 +9,4 @@ echo $files
 mkdir -p "$HOME/bin/dame"
 
 # Copy all bash files to dame directory
-cp $files "$HOME/bin/dame/"
+cp -p $files "$HOME/bin/dame/"

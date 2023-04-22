@@ -1,0 +1,11 @@
+# Completion function
+_dame_completion() {
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  local orig_dir="$(pwd)"  # save the original working directory
+  cd "$HOME/bin/dame"  # change to the ~/bin/dame directory
+  local files="$(compgen -f -X '!*.sh' -- "$cur")"
+  cd "$orig_dir"  # restore the original working directory
+  COMPREPLY=( $(compgen -W "$files" -- "$cur") )
+}
+# Register completion function
+complete -F _dame_completion dame

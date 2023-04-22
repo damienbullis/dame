@@ -5,6 +5,7 @@ IGNORE_LIST="# Misc
 .DS_Store
 *.log
 
+# Common
 node_modules/
 dist/
 build/

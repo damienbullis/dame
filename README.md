@@ -11,14 +11,20 @@ git clone
 2. install dame cli
 
 ```bash
-sh init.sh
+sh install.sh
 ```
 
-This will initialize dame cli and install scripts
+This will install scripts
 
 ## Update Guide
 
-1. to update scripts available to dame cli
+1. pull latest changes
+
+```bash
+git pull
+```
+
+2. reinstall dame cli
 
 ```bash
 sh install.sh

@@ -6,7 +6,8 @@ if [ $# -ne 2 ]; then
   exit 1
 fi
 
-# Argument 1: Add to README.md
+mkdir "$1"
+cd "$1"
 echo "# $1" >> README.md
 
 # Initialize Git repository
